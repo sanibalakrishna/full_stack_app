@@ -93,3 +93,52 @@ For the api, there are some routes available:
 
 - NestJS for the api app
 - Prisma for the database
+
+---
+
+# Full Stack Developer Assessment Submission
+
+## Author
+- **Name:** Balakrishna
+
+## Assumptions
+- The backend API runs on port 3002 and the frontend (web) runs on port 3000 by default.
+- The database is SQLite and seeded with dummy NFT/user data for testing.
+- CORS is enabled for local development.
+- All endpoints and UI features are implemented as described in `MISSIONS.md`.
+
+## Features Completed
+- **/api/creations/recent**: Returns the 5 most recent NFTs (id, title, image, createdAt).
+- **/api/users**: Returns all users, including their email.
+- **/explore/recent**: Web page that displays the 5 most recent NFTs in a responsive grid (image, name, created date).
+
+## Instructions to Run the App
+
+### 1. Install dependencies (from project root)
+```sh
+pnpm install
+```
+
+### 2. Setup the database and seed dummy data
+```sh
+cd apps/api
+pnpm exec prisma migrate deploy
+pnpm exec ts-node ./prisma/seed.ts
+```
+
+### 3. Start the backend API
+```sh
+pnpm --filter api dev
+```
+
+### 4. Start the frontend (web)
+```sh
+pnpm --filter web dev
+```
+
+### 5. Access the app
+- API: [http://localhost:3002/api/creations/recent](http://localhost:3002/api/creations/recent)
+- Web: [http://localhost:3000/explore/recent](http://localhost:3000/explore/recent)
+
+---
+For any issues, please check the README or contact Balakrishna.
