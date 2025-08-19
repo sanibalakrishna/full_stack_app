@@ -7,7 +7,15 @@ export class UserController {
 
   @Get()
   getUsers() {
-    return this.userService.getUsers({});
+    // Always return id, name, email, avatar for all users
+    return this.userService.getUsers({
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        avatar: true,
+      },
+    });
 
     // return this.userService.getUsers({
     //   include: {
